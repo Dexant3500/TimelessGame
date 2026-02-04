@@ -6,27 +6,18 @@ public class Curtains : MonoBehaviour
 {
     public Animator FadeOut;
 
-    void Awake()
-    {
-        FadeOut.Play("FadeFromBlack");
-    }
     private void OnEnable()
     {
         SceneChecker.CurtainCall += BlackOut;
-        SceneChecker.CurtainRise += Awaken;
     }
     private void OnDisable()
     {
         SceneChecker.CurtainCall -= BlackOut;
-        SceneChecker.CurtainRise -= Awaken;
     }
 
     void BlackOut()
     {
-        FadeOut.Play("FadeToBlack");
+        FadeOut.Play("FTB");
     }
-    void Awaken()
-    {
-        FadeOut.Play("FadeFromBlack");
-    }
+
 }
